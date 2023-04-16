@@ -3,7 +3,7 @@
     "tasks": [
         {
 			"type": "cppbuild",
-			"label": "Build with GCC",
+			"label": "Build with GCC Ex2",
 			"command": "g++-11",
 			"args": [
 				"-g",
