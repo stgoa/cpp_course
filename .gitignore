@@ -34,3 +34,5 @@
 .DS_Store
 main.dSYM/Contents/Info.plist
 main.dSYM/Contents/Resources/DWARF/main
+rooster
+.vscode/rooster.dSYM/Contents/Info.plist
