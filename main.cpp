@@ -9,7 +9,7 @@ consteval int get_number() {
 }
 
 // this function prints the number systems
-consteval int example() {
+int example() {
      // decimal
     int decimal = 42;
     // binary
@@ -27,7 +27,6 @@ consteval int example() {
     return 42;
 }
 
-
 // function that initiallizes a chat in the console
 int chat() {
     // ask the user where he lives
@@ -38,8 +37,29 @@ int chat() {
     return 42;
 }
 
+void print_prefix_postfix_example() {
+    // store number 1 in a variable
+    int number1 = 1;
+
+    // print the number
+    std::cout << "Number: " << number1 << std::endl;
+    // print postfix
+    std::cout << "Postfix: " << number1++ << std::endl;
+    // print the number
+    std::cout << "Number: " << number1 << std::endl;
+    // print the prefix
+    std::cout << "Prefix: " << ++number1 << std::endl;
+    // print the number
+    std::cout << "Number: " << number1 << std::endl;
+}
+
 // main function
 int main() {
-    
+    // call the example function
+    example();
+
+    // call the prefix postfix example
+    print_prefix_postfix_example();
+
     return 0;
 }
