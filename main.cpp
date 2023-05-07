@@ -53,13 +53,52 @@ void print_prefix_postfix_example() {
     std::cout << "Number: " << number1 << std::endl;
 }
 
+double celcius_to_fahrenheit(double celcius) {
+    return celcius * 1.8 + 32;
+}
+
+int quiz_degrees() {
+    // read the input celcuis degrees
+    double celcius;
+    std::cout << "Enter the celcius degrees: ";
+    std::cin >> celcius;
+    // convert the celcius degrees to fahrenheit
+    double fahrenheit = celcius_to_fahrenheit(celcius);
+    // print the fahrenheit degrees
+    std::cout << "Fahrenheit degrees: " << fahrenheit << std::endl;
+
+    return 0;
+}
+
+int quiz_volume() {
+    // read the length, height and width of the box
+    double length, width, height;
+    std::cout << "Enter the length, width and height of the box: ";
+    std::cin >> length >> width >> height;
+    // calculate the base area of the box
+    double area = length * width;
+    // print the base area of the box
+    std::cout << "Base area: " << area << std::endl;
+    // calculate the volume of the box
+    double volume = area * height;
+    // print the volume of the box
+    std::cout << "Volume: " << volume << std::endl;
+    
+    return 0;
+}
+
+
+
+
+
 // main function
 int main() {
-    // call the example function
-    example();
+    // declare a const variable
+    const int number = 42;
+    // try to change the value of the variable
+    // print the number
+    std::cout << "Number: " << number << std::endl;
 
-    // call the prefix postfix example
-    print_prefix_postfix_example();
 
     return 0;
 }
