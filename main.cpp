@@ -2,6 +2,7 @@
 
 // include the iostream library
 #include <iostream>
+#include <bitset>
 
 // this function gets the number 42
 consteval int get_number() {
@@ -9,7 +10,7 @@ consteval int get_number() {
 }
 
 // this function prints the number systems
-int example() {
+void enumber_systems() {
      // decimal
     int decimal = 42;
     // binary
@@ -24,17 +25,16 @@ int example() {
     std::cout << "Binary: " << binary << std::endl;
     std::cout << "Octal: " << octal << std::endl;
     std::cout << "Hexadecimal: " << hexadecimal << std::endl;
-    return 42;
+
 }
 
 // function that initiallizes a chat in the console
-int chat() {
+void chat() {
     // ask the user where he lives
     std::string country;
     std::cout << "Where do you live? ";
     std::cin >> country;
     std::cout << "I've hear that " << country<< " is very nice!" << std::endl;
-    return 42;
 }
 
 void print_prefix_postfix_example() {
@@ -57,7 +57,7 @@ double celcius_to_fahrenheit(double celcius) {
     return celcius * 1.8 + 32;
 }
 
-int quiz_degrees() {
+void quiz_degrees() {
     // read the input celcuis degrees
     double celcius;
     std::cout << "Enter the celcius degrees: ";
@@ -67,10 +67,9 @@ int quiz_degrees() {
     // print the fahrenheit degrees
     std::cout << "Fahrenheit degrees: " << fahrenheit << std::endl;
 
-    return 0;
 }
 
-int quiz_volume() {
+void quiz_volume() {
     // read the length, height and width of the box
     double length, width, height;
     std::cout << "Enter the length, width and height of the box: ";
@@ -84,21 +83,38 @@ int quiz_volume() {
     // print the volume of the box
     std::cout << "Volume: " << volume << std::endl;
     
-    return 0;
 }
 
+void implicit_conversion() {
+    int units_sold = 42;
+    double price = 10.1;
+    auto revenue = units_sold * price;
+
+    std::cout << "Revenue: " << revenue << std::endl;
+
+    std::cout << "Revenue second: " << units_sold * price << std::endl;
+}
+
+void explicit_conversion() {
+    double units_sold = 42.6;
+    double price = 10.1;
+    int revenue = units_sold * price;
+    // implicit conversion
+    std::cout << "Revenue: " << revenue << std::endl;
+
+    // explicit conversion
+    revenue = static_cast<int>(units_sold) *  static_cast<int>(price);
+
+    std::cout << "Revenue second: " << revenue<< std::endl;
+}
 
 
 
 
 // main function
 int main() {
-    // declare a const variable
-    const int number = 42;
-    // try to change the value of the variable
-    // print the number
-    std::cout << "Number: " << number << std::endl;
-
+    // try example
+    explicit_conversion();
 
     return 0;
 }
