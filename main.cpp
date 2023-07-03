@@ -3,6 +3,11 @@
 // include the iostream library
 #include <iostream>
 #include <bitset>
+#include <vector>
+#include <array>
+#include <limits>
+#include <iterator>
+
 
 // this function gets the number 42
 consteval int get_number() {
@@ -109,12 +114,73 @@ void explicit_conversion() {
 }
 
 
+void bit_shifting(){
+    unsigned short int value = 64;
+
+    // print in base 10
+    std::cout << "Value base 10: " << value << std::endl;
+
+    // print in base 2
+    std::cout << "Value base 2: " << std::bitset<16>(value) << std::endl;
+
+    // shift bits right
+    value = value >> 1;
+    // print base 2
+    std::cout << "Value base 2: " << std::bitset<16>(value) << std::endl;
+
+    // shit left twice
+    value = (value << 2);
+
+    // print base 2
+    std::cout << "Value base 2: " << std::bitset<16>(value) << std::endl;
+
+    // print base 10
+    std::cout << "Value base 10: " << value << std::endl;
+
+}
 
 
-// main function
+// the following function 'twoSum' recieves an array "nums" of integers and returns an array with the two largest values in nums
+
+std::array<int, 2> findTwoLargest(const std::array<int, 5>& nums) {
+    int largest = std::numeric_limits<int>::min();
+    int secondLargest = std::numeric_limits<int>::min();
+
+    for (const auto& num : nums) {
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num > secondLargest) {
+            secondLargest = num;
+        }
+    }
+
+    return {largest, secondLargest};
+}
+
 int main() {
-    // try example
-    explicit_conversion();
+    std::array<int, 5> nums = {3, 1, 5, 2, 4};
+    std::array<int, 2> result = findTwoLargest(nums);
+
+    // Print the two largest values
+    for (const auto& num : result) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
+
+
+
+// main function
+// int main() {
+//     // try example
+//     int nums[] = {2,7,11,15};
+//     int target = 9;
+    
+//     // print the result
+//     std::cout << "twoSum: " <<  twoSum(nums) << std::endl;
+
+//     return 0;
+// }
