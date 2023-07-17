@@ -158,7 +158,14 @@ std::array<int, 2> findTwoLargest(const std::array<int, 5>& nums) {
     return {largest, secondLargest};
 }
 
-int main() {
+
+int global_var{23};
+
+void some_function(){
+    std::cout << "inside the function, global_val: " << global_var << std::endl;
+}
+
+int leetcode() {
     std::array<int, 5> nums = {3, 1, 5, 2, 4};
     std::array<int, 2> result = findTwoLargest(nums);
 
@@ -171,7 +178,10 @@ int main() {
     return 0;
 }
 
-
+int main() {
+    some_function();
+    return 0;
+}
 
 // main function
 // int main() {
